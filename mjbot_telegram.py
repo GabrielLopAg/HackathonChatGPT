@@ -11,8 +11,8 @@ import sys
 import os
 
 # openai.api_key = config.openai_key
-os.environ["OPENAI_API_KEY"] = "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"
-openai.api_key = "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"
+os.environ["OPENAI_API_KEY"] = "sk-G2arlkdAq408VAgkHfb8T3BIbkFJeGo9Qwipy3it8nDXHmry"
+openai.api_key = "sk-G2arlkdAq408VAgkHfb8T3BIbkFJeGo9Qwipy3it8nDXHmry"
 client = TelegramClient(None, config.API_ID, config.API_HASH).start(bot_token=config.BOT_TOKEN)
 
 
