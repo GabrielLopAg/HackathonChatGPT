@@ -24,8 +24,7 @@ async def handle_start_command(event):
         query_engine = vIndex.as_query_engine()
 
         async with client.conversation(await event.get_chat(), exclusive=True, timeout=600) as conv:
-            history = []
-
+            # history = []
             await conv.send_message("Hey, how's it going?")
 
             while True:
