@@ -1,14 +1,17 @@
 # Importing Libraries
 import traceback
-import telethon # Library to interact with Telegram's API as a user or through a bot account
 from telethon import TelegramClient, events
 
 import config # Custom file containing configuration settings for the bot.
 import openai # Python module that provides an interface to the OpenAI API.
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 # openai.api_key = config.openai_key
-openai.api_key = "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"
+openai.api_key = "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"
 client = TelegramClient(None, config.API_ID, config.API_HASH).start(bot_token=config.BOT_TOKEN)
 
 
@@ -19,7 +22,7 @@ async def handle_start_command(event):
         async with client.conversation(await event.get_chat(), exclusive=True, timeout=600) as conv:
             history = []
 
-            await conv.send_message("Hey, I'll send you back whatever you write! To cancel, do /cancel")
+            await conv.send_message("Hey, how's it going?")
 
             while True:
                 # resp = (await conv.get_response()).raw_text
