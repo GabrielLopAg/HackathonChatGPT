@@ -13,4 +13,4 @@ BOT_TOKEN = "6312546686:AAGohRW0K7RnnzOuTDMviXEnuo_nNeex2Dw"
 model_engine = "gpt-3.5-turbo"
 
 # Get your API_KEY by creating an OpenAi account and the go here: 
-openai_key = "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"
+openai_key = "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"

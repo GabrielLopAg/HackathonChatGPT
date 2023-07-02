@@ -8,7 +8,9 @@ import config # Custom file containing configuration settings for the bot.
 import openai # Python module that provides an interface to the OpenAI API.
 
 
-openai.api_key = config.openai_key
+
+# openai.api_key = config.openai_key
+openai.api_key = "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"
 client = TelegramClient(None, config.API_ID, config.API_HASH).start(bot_token=config.BOT_TOKEN)
 
 # Define button templates
@@ -34,11 +36,10 @@ async def send_question_and_retrieve_result(prompt, conv):
     # Wait for the user to respond or tap a button using asyncio.wait()
     done, _ = await asyncio.wait({conv.wait_event(events.CallbackQuery()), conv.get_response()}, return_when=asyncio.FIRST_COMPLETED)
 
-    # done, _ = await asyncio.wait({conv.get_response()}, return_when=asyncio.FIRST_COMPLETED)
 
-    # test = await conv.get_response()
-    # print(test)
-    # return test.message.strip()
+    resp = (await conv.get_response()).raw_text
+    print(f"TEST: {resp}")
+
     # Retrieve the result of the completed coroutine and delete the sent message
     result = done.pop().result()
     # # await message.delete()
